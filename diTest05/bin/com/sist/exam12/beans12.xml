@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="SmsSender" class="com.sist.exam12.SmsSender">
+		<property name="from" value="서버"></property>
+		<property name="to" value="클라이언트"></property>
+	
+	</bean>
+	
+	<bean id="SysteMoniter" class="com.sist.exam12.SysteMoniter">
+		<property name="periodTime" value="1"></property>
+		<property name="sender" ref="SmsSender"></property>
+
+	</bean>
+</beans>

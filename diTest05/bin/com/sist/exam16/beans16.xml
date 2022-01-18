@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ <bean id="AriticleDAO" class="com.sist.exam16.OracleAriticleDAO"/>
+ 
+<!--
+	autowire="constructor"는 내부적으로 byType으로 동작함
+	그래서 동일한 자료향의 객체를 하나만 만들어야 함
+	그러나 동일한 속서명의 id가 있다면 예외상황임
+ -->
+ 
+	<bean id="AriticleDAO2" class="com.sist.exam16.OracleAriticleDAO"/>
+	<bean id="dao" class="com.sist.exam16.OracleAriticleDAO"/>
+			
+	<bean id="ws" class="com.sist.exam16.WriteAriticleServiceImpl" autowire="constructor"/>
+	 
+	
+	 
+</beans>
